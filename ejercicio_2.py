@@ -24,17 +24,14 @@ def mostrar_inventario(existencias):
 
 def pedir_entero_en_rango(mensaje, minimo, maximo):
     while True:
+        entrada = input(mensaje)
         try:
-            valor = int(input(mensaje))
+            valor = int(entrada)
+            if minimo <= valor <= maximo:
+                return valor
+            print(f"Error: El número debe estar entre {minimo} y {maximo}. Intente de nuevo.")
         except ValueError:
-            print("Error: debes escribir un número entero.")
-            continue
-
-        if minimo <= valor <= maximo:
-            return valor
-
-        print(f"Error: el valor debe estar entre {minimo} y {maximo}.")
-
+            print("Error: Entrada inválida. Ingrese un número entero válido.")
 
 # SECCIÓN C: operaciones de inventario
 
