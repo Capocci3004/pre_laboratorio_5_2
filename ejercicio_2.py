@@ -2,19 +2,25 @@
 
 def clasificar_existencia(cantidad):
     # TODO A1: retornar la clasificación correspondiente.
-    return "Clasificación pendiente"
+    if cantidad == 0:
+        return "Agotado"
+    elif cantidad <= 5:
+        return "Bajo"
+    else:
+        return "Suficiente"
 
-
-def mostrar_inventario(existencias):
-    print("\n--- INVENTARIO ---")
-
-    # TODO A2:
+  # TODO A2:
     # Mostrar número de producto, cantidad y clasificación.
+def mostrar_inventario(existencias):
+    if not existencias:
+        return print("El inventario está vacío.")
+    elif len (existencias) >= 1 and len(existencias) <= 20:
+        return print (f"El inventario tiene {len(existencias)} productos.")
+    else:
+        return print ("El inventario tiene más de 20 productos.")
+        
 
-    print(existencias)
-
-
-# SECCIÓN B: validación de entradas
+  # SECCIÓN B: validación de entradas
 
 def pedir_entero_en_rango(mensaje, minimo, maximo):
     while True:
